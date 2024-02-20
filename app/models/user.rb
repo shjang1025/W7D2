@@ -16,11 +16,13 @@ class User < ApplicationRecord
 
     def is_password?(password)
         bc = BCrypt::Password.new(password_digest)
-        bc.is_password?(password)s
+        bc.is_password?(password)
     end
 
     def reset_session_token!
-
+        session_token = SecureRandom.urlsafe_base64
+        self.save!
+        self.session_token
     end
 
     def ensure_session_token
