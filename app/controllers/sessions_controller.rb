@@ -9,9 +9,10 @@ class SessionsController < ApplicationController
         user = User.find_by_credentials(email, password)
         if user
             log_in(user)
-            redirect_to bands_url
+            redirect_to user_url(user.id)
         else 
-            redirect_to new_session_url
+            flash.now[:errors] = ['invalid email/password']
+            render :sign_in
         end
     end
 

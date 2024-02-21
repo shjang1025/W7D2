@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
+html {
+    --font: "Protest Strike", sans-serif;
+    /* font-family: var(--font); */
+}
+
+header {
+    display: flex;
+    justify-content:space-between;
+}
+
+.branding {
+    font-family: var(--font);
+    font-size: 4em;
+}
+
+
+.authentication_form > * > a{
+    border-radius: 30px;
+    background-color: rgb(46, 46, 255);
+    color: aliceblue;
+    padding: 0.5rem;
+    text-decoration: none;
+}

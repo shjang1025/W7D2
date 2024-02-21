@@ -27,5 +27,11 @@
       </span> 
     </header>
     <%= yield %>
+    <% if flash.now[:errors] %>
+      <% flash.now[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+    
   </body>
 </html>
